@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace MVVMInWPF.Model {
     public class User : INotifyPropertyChanged {
-        private int userId;
+        private int    userId;
         private string firstName;
         private string lastName;
         private string city;
@@ -14,54 +14,42 @@ namespace MVVMInWPF.Model {
         private string country;
 
         public int UserId {
-            get {
-                return userId;
-            }
+            get => userId;
             set {
                 userId = value;
                 OnPropertyChanged("UserId");
             }
         }
         public string FirstName {
-            get {
-                return firstName;
-            }
+            get => firstName;
             set {
                 firstName = value;
                 OnPropertyChanged("FirstName");
             }
         }
         public string LastName {
-            get {
-                return lastName;
-            }
+            get => lastName;
             set {
                 lastName = value;
                 OnPropertyChanged("LastName");
             }
         }
         public string City {
-            get {
-                return city;
-            }
+            get => city;
             set {
                 city = value;
                 OnPropertyChanged("City");
             }
         }
         public string State {
-            get {
-                return state;
-            }
+            get => state;
             set {
                 state = value;
                 OnPropertyChanged("State");
             }
         }
         public string Country {
-            get {
-                return country;
-            }
+            get => country;
             set {
                 country = value;
                 OnPropertyChanged("Country");
@@ -70,11 +58,7 @@ namespace MVVMInWPF.Model {
 
         #region INotifyPropertyChanged Members
         public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string propertyName) {
-            if (PropertyChanged != null) {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
+        private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         #endregion
     }
 
