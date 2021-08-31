@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 
-namespace MVVMInWPF.Model
-{
-    public class User : INotifyPropertyChanged
-    {
+namespace MVVMInWPF.Model {
+    public class User : INotifyPropertyChanged {
         private int userId;
         private string firstName;
         private string lastName;
@@ -15,74 +13,56 @@ namespace MVVMInWPF.Model
         private string state;
         private string country;
 
-        public int UserId
-        {
-            get
-            {
+        public int UserId {
+            get {
                 return userId;
             }
-            set
-            {
+            set {
                 userId = value;
                 OnPropertyChanged("UserId");
             }
         }
-        public string FirstName
-        {
-            get
-            {
+        public string FirstName {
+            get {
                 return firstName;
             }
-            set
-            {
+            set {
                 firstName = value;
                 OnPropertyChanged("FirstName");
             }
         }
-        public string LastName
-        {
-            get
-            {
+        public string LastName {
+            get {
                 return lastName;
             }
-            set
-            {
+            set {
                 lastName = value;
                 OnPropertyChanged("LastName");
             }
         }
-        public string City
-        {
-            get
-            {
+        public string City {
+            get {
                 return city;
             }
-            set
-            {
+            set {
                 city = value;
                 OnPropertyChanged("City");
             }
         }
-        public string State
-        {
-            get
-            {
+        public string State {
+            get {
                 return state;
             }
-            set
-            {
+            set {
                 state = value;
                 OnPropertyChanged("State");
             }
         }
-        public string Country
-        {
-            get
-            {
+        public string Country {
+            get {
                 return country;
             }
-            set
-            {
+            set {
                 country = value;
                 OnPropertyChanged("Country");
             }
@@ -90,14 +70,12 @@ namespace MVVMInWPF.Model
 
         #region INotifyPropertyChanged Members
         public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
+        private void OnPropertyChanged(string propertyName) {
+            if (PropertyChanged != null) {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
         #endregion
-    }       
-      
+    }
+
 }
